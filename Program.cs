@@ -6,21 +6,21 @@ namespace ProgettoSettimanaleC
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            bool verificaCiclo = true;
-            int giornoNasc = 0;
+            Console.OutputEncoding = System.Text.Encoding.UTF8; //Codice per visualizzare caratteri speciali
+            bool verificaCiclo = true; //Variabile che uso per i while dopo
+            int giornoNasc = 0; //variabili per il costruttore
             int annoNasc = 0;
             int meseNasc = 0;
             string codiceFiscale = "";
             string sesso = "";
             double reddito = 0;
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Green; //pagina di benvenuto
             Console.WriteLine("\r\n _______   ________  __    __  __     __  ________  __    __  __    __  ________   ______  \r\n|       \\ |        \\|  \\  |  \\|  \\   |  \\|        \\|  \\  |  \\|  \\  |  \\|        \\ /      \\ \r\n| $$$$$$$\\| $$$$$$$$| $$\\ | $$| $$   | $$| $$$$$$$$| $$\\ | $$| $$  | $$ \\$$$$$$$$|  $$$$$$\\\r\n| $$__/ $$| $$__    | $$$\\| $$| $$   | $$| $$__    | $$$\\| $$| $$  | $$   | $$   | $$  | $$\r\n| $$    $$| $$  \\   | $$$$\\ $$ \\$$\\ /  $$| $$  \\   | $$$$\\ $$| $$  | $$   | $$   | $$  | $$\r\n| $$$$$$$\\| $$$$$   | $$\\$$ $$  \\$$\\  $$ | $$$$$   | $$\\$$ $$| $$  | $$   | $$   | $$  | $$\r\n| $$__/ $$| $$_____ | $$ \\$$$$   \\$$ $$  | $$_____ | $$ \\$$$$| $$__/ $$   | $$   | $$__/ $$\r\n| $$    $$| $$     \\| $$  \\$$$    \\$$$   | $$     \\| $$  \\$$$ \\$$    $$   | $$    \\$$    $$\r\n \\$$$$$$$  \\$$$$$$$$ \\$$   \\$$     \\$     \\$$$$$$$$ \\$$   \\$$  \\$$$$$$     \\$$     \\$$$$$$ \r\n                                                                                           \r\n                                                                                           \r\n                                                                                           \r\n");
             Console.WriteLine("\r\n _____       _           _       _                       _ _   _                     \r\n/  __ \\     | |         | |     | |                     | (_) | |                    \r\n| /  \\/ __ _| | ___ ___ | | __ _| |_ ___  _ __ ___    __| |_  | |_ __ _ ___ ___  ___ \r\n| |    / _` | |/ __/ _ \\| |/ _` | __/ _ \\| '__/ _ \\  / _` | | | __/ _` / __/ __|/ _ \\\r\n| \\__/\\ (_| | | (_| (_) | | (_| | || (_) | | |  __/ | (_| | | | || (_| \\__ \\__ \\  __/\r\n \\____/\\__,_|_|\\___\\___/|_|\\__,_|\\__\\___/|_|  \\___|  \\__,_|_|  \\__\\__,_|___/___/\\___|\r\n                                                                                     \r\n                                                                                     \r\n");
             Console.WriteLine("Premi un qualsiasi tasto nella tastiera per andare avanti ...");
             Console.ReadKey();
             Console.ResetColor();
-            Console.Clear();
+            Console.Clear();//Faccio inserire i dati
             Console.ForegroundColor= ConsoleColor.DarkBlue;
             Console.WriteLine("Inserisci il tuo nome");
             Console.ResetColor();
@@ -31,7 +31,7 @@ namespace ProgettoSettimanaleC
             Console.ResetColor();
             string cognome = Console.ReadLine();
             cognome =cognome.ToUpper();
-            while (verificaCiclo)
+            while (verificaCiclo) //ciclo per verificare se il giorno e' giusto (tra 1 e 31)
             {
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Inserisci il giorno in cui sei nat* (GG)");
@@ -60,7 +60,7 @@ namespace ProgettoSettimanaleC
                 }
             }
             verificaCiclo = true;
-            while (verificaCiclo)
+            while (verificaCiclo) //ciclo per verificare se il mese e' compatibile con il giorno scelto (es 30 non va bene per febbraio)
             {
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Inserisci il mese in cui sei nat* (MM)");
@@ -121,7 +121,7 @@ namespace ProgettoSettimanaleC
                 }
             }
             verificaCiclo = true;
-            while(verificaCiclo)
+            while(verificaCiclo) //ciclo per verificare se l'anno e' maggiore di quest'anno
             {
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Inserisci l'anno in cui sei nat* (AAAA)");
@@ -140,7 +140,7 @@ namespace ProgettoSettimanaleC
                 }
             }
             verificaCiclo = true;
-            while (verificaCiclo)
+            while (verificaCiclo) //ciclo per verificare che il codcie fiscale sia di 16 cifre
             {
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Inserisci il codice fiscale (16 caratteri/cifre)");
@@ -160,7 +160,7 @@ namespace ProgettoSettimanaleC
                 }
             }
             verificaCiclo = true;
-            while (verificaCiclo)
+            while (verificaCiclo) //ciclo per verificare se la stringa inserita sia uguale ai 3 gneeri
             {
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Inserisci il tuo genere (M/F/*)");
@@ -180,12 +180,12 @@ namespace ProgettoSettimanaleC
                 }
             }
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("Inserisci il tuo comune di residenza");
+            Console.WriteLine("Inserisci il tuo comune di residenza"); //inserimento residenza
             Console.ResetColor();
             string comune = Console.ReadLine();
             comune = comune.ToUpper();
             verificaCiclo = true;
-            while (verificaCiclo)
+            while (verificaCiclo) //ciclo per verificare se il reddito inserito sia maggiore di 0
             {
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Inserisci il tuo reddito annuo");
@@ -203,8 +203,8 @@ namespace ProgettoSettimanaleC
                     verificaCiclo = false;
                 }
             }
-            Contribuente contribuente1 = new Contribuente(nome,cognome,giornoNasc,meseNasc,annoNasc,codiceFiscale,sesso,comune,reddito);
-            switch (reddito)
+            Contribuente contribuente1 = new Contribuente(nome,cognome,giornoNasc,meseNasc,annoNasc,codiceFiscale,sesso,comune,reddito); //istanzio un nuovo oggetto coi dati inseriti dall'utente
+            switch (reddito) //switch per calcolare le tasse da pagare
             {
                 case double n when (n > 0 && n <= 15000):
                     Console.Clear();
@@ -335,7 +335,7 @@ namespace ProgettoSettimanaleC
                 ComuneResidenza = comuneResidenza;
                 RedditoAnnuale = redditoAnnuale;
             }
-            public void MostraDati()
+            public void MostraDati() //metodo per mostrare tutti i dati
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€*€");
@@ -347,7 +347,7 @@ namespace ProgettoSettimanaleC
                 Console.WriteLine("Reddito dichiarato: "+RedditoAnnuale+ "€,");
                 Console.ResetColor();
             }
-            public void CalcolatoreTasse(int range, int aliquota, int tassaFissa)
+            public void CalcolatoreTasse(int range, int aliquota, int tassaFissa) //metodo per calcolare le tasse
             {
                 double eccedenza = RedditoAnnuale - range;
                 double tasse = eccedenza * aliquota / 100;
